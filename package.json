@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "socket.io": "^4.5.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "real-time-web-2122",
+  "description": "## Table of Contents - [Synopsis](#synopsis) - [Description](#description) - [Communication](#communication) - [Goals](#goals) - [Grading](#grading) - [Programme](#programme)",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwenversteegh/real-time-web-2122.git"
+  },
+  "author": "gwen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gwenversteegh/real-time-web-2122/issues"
+  },
+  "homepage": "https://github.com/gwenversteegh/real-time-web-2122#readme"
+}
