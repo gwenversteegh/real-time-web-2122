@@ -4,15 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Chat functie</title>
 </head>
 <body>
     <main>
-        <form action="/chat/" method='GET'>
-            <input type="text" name="name" id="name">
-            <input type="submit" value="Ga naar de chat">
-        </form>
+        <section>
+            <ol>
+                <% data.forEach(function(question, i) { %>   
+                    <li> 
+                        <p> <%- question.question %></p>
+                        <form action="" class="form">
+                            <div>
+                                <div>
+                                    <input type="radio" name="vraag-<%= i + 1%>" id="<%- question.correct_answer %>" class="true"><label for="<%- question.correct_answer %>"><%- question.correct_answer %></label>
+                                </div>
+        
+                                <% question.incorrect_answers.forEach(function(awnser) { %>
+                                    <div>
+                                        <input type="radio" name="vraag-<%=i + 1%>" id="<%- awnser %>"><label for="<%- awnser %>"><%- awnser %></label> 
+                                    </div>   
+                                <% }) %>
+                            </div>
+                            
+                            <input type="submit" value="Next question">
+                        </form>
+    
+                    </li>
+                <% }) %>
+            </ol>
+        </section>
     </main>
     
     <script src="/socket.io/socket.io.js"></script>

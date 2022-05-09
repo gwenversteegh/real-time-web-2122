@@ -1,6 +1,7 @@
 /* https://socket.io/get-started/chat */
 const express = require('express')
 const app = express()
+const fetch = require('node-fetch')
 const http = require('http').createServer(app)
 const path = require('path')
 const io = require('socket.io')(http)
@@ -11,25 +12,29 @@ app.set('views', './views');
 
 app.use(express.static(path.resolve('public')))
 
-app.get("/", (req, res)=>{
-    res.render('chat')
-})
 
-io.on('connection', (socket) => {
-  console.log('a user connected')
+app.get("/", renderPagina)
 
-  socket.on('message', (message) => {
-    io.emit('message', message)
+function renderPagina (req, res){
+  fetch(`https://opentdb.com/api.php?amount=20&category=27&difficulty=medium&type=multiple`)
+  .then(function(response){
+    return response.json()
   })
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected')
+  .then((jsonData) =>{
+    res.render('index', {
+      data: jsonData.results
+    })
   })
-})
+  .catch((err)=>{
+    res.render('error', {
+      pageTitle: "Error"
+    })
+  })
+}
 
 http.listen(port, () => {
-  console.log('listening on port ', port)
-})
+    console.log('listening on port ', port)
+  })
 
 
 /*naam meegeven*/
