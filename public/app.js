@@ -1,6 +1,6 @@
 
 const observer = new IntersectionObserver(showText); 
-const paragraphs = document.querySelectorAll('li');
+const paragraphs = document.querySelectorAll('main section ol li');
 
 paragraphs.forEach(element => {
   observer.observe(element) 

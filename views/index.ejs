@@ -11,6 +11,7 @@
     <main>
         <section>
             <ol>
+                <h1> The big animal quizzzzzzz</h1>
                 <% data.forEach(function(question, i) { %>   
                     <li> 
                         <p> <%- question.question %></p>
@@ -27,7 +28,6 @@
                                 <% }) %>
                             </div>
                             
-                            <input type="submit" value="Next question">
                         </form>
     
                     </li>
@@ -35,7 +35,7 @@
             </ol>
         </section>
     </main>
-    <script type="modules" src="../public/app.js"></script>
+    <script type="module" src="app.js"></script>
 
 </body>
 </html>
