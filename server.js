@@ -1,10 +1,12 @@
 /* https://socket.io/get-started/chat */
+
 const express = require('express')
 const app = express()
 const fetch = require('node-fetch')
 const http = require('http').createServer(app)
 const path = require('path')
-const io = require('socket.io')(http)
+const socket = require('socket.io')(http)
+
 const port = process.env.PORT || 9876
 
 app.set('view engine', 'ejs');
@@ -37,6 +39,10 @@ http.listen(port, () => {
   })
 
 
-/*naam meegeven*/
-let users = []
+
+// socket.on('name', (name) => {
+//   let object = {username: name , id: socket.id}
+//   online.push(object)
+//   io.emit('name', {username: name , id: socket.id})
+// })
 

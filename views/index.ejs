@@ -8,7 +8,27 @@
     <title>Chat functie</title>
 </head>
 <body>
+
+    <!-- <header>
+        <ul>
+            <h3>Online:</h3>
+            <% online.forEach(name => { %>   
+             <li id="text<%- name.id %>">
+                 <p><%- name.username %></p>
+             </li>
+            <% }) %>
+    </header> -->
     <main>
+
+        <section class="index">
+            <form action="" id="nameform">
+                <label for="name">What is your name?</label>
+                <input type="text" name="name" id="name">
+                <input type="submit" value="Start the quiz">
+            </form>
+        </section>
+
+
         <section>
             <ol>
                 <h1> The big animal quizzzzzzz</h1>
