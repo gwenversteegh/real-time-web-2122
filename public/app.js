@@ -17,3 +17,12 @@ function showText(entries, observer) {
   });
 };
 
+const options = document.querySelectorAll("main section ol li form > div")
+function randomizeAnswers(){
+  options.forEach((answers)=>{
+    for (var i = answers.children.length; i >= 0; i--) {
+      answers.appendChild(answers.children[Math.random() * i | 0]);
+    }
+  })
+}
+randomizeAnswers()
